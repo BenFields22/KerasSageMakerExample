@@ -14,19 +14,22 @@ bucket = sess.default_bucket()
 tf_framework_version = tf.__version__
 # Generate synthetic dataset
 np.random.seed(42)
-num_samples = 1000  # Total number of samples
+
+num_samples = 5000  # Total number of samples
 num_classes = 4  # Number of classes
+# Generate inputs: Random data for 4-dimensional feature space
+X = np.random.rand(num_samples, num_classes)
 
-# Generate inputs: One-hot encoded vectors of length 4
-X = np.eye(num_classes)[np.random.choice(num_classes, num_samples)]
-
-# Labels: Integer values representing the class (0, 1, 2, 3)
+# Labels: Index of the maximum value in each input vector
 y = np.argmax(X, axis=1)
 
 # Split data into train and test sets
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+print("X Data")
+print(X_train[0:10])
+print("Y Data")
+print(y_train[0:10])
 
 # Define the model
 model = keras.Sequential(
