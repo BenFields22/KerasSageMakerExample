@@ -1,0 +1,124 @@
+/* General Reset and Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f4f8fb; /* Light blue-gray background */
+  color: #333; /* Neutral dark text */
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.Container {
+  max-width: 600px;
+  margin: 50px auto; /* Centered layout */
+  padding: 20px 30px;
+  background: #ffffff; /* White background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Modern shadow */
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Container:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Elevated shadow */
+}
+
+/* Section Spacing */
+.Container > * {
+  margin-bottom: 20px;
+}
+
+.Container > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Title Styling */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff; /* Blue accent */
+  text-align: center;
+}
+
+/* Dropdown Styling */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  display: block;
+  width: 100%; /* Full-width for better alignment */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+button:active {
+  background-color: #003f7f;
+  transform: scale(0.98); /* Pressed effect */
+}
+
+/* Data Display Section */
+.DataDisplay {
+  background: #f9fafc; /* Light gray background */
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+  color: #333;
+  border: 1px solid #e0e0e0;
+  white-space: pre-wrap; /* Allow wrapping for JSON */
+  overflow-x: auto;
+}
+
+.DataDisplay h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #007bff; /* Accent color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Container {
+    padding: 15px 20px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
